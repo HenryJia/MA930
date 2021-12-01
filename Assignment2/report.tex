@@ -1,4 +1,4 @@
-\documentclass[11pt, twoside]{article}
+\documentclass[10pt, twoside]{article}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
@@ -23,25 +23,23 @@ Predicting house prices is obviously useful for a number of reasons. Estate agen
 
 The vanilla linear regression technique introduced in the lectures are absolutely hopeless here. The large number of variables caused the model to overfit wildly. Vanilla linear regression yields a root mean squared error (RMSE) of around \$19000, but a test set error of well over several million. There are multiple ways to remedy this. One method is to reduce the number of explanatory variables used in the regression model. The explanatory variables which are used can be chosen by individually evaluating their correlation with the sale price, and then selecting only the variables with the highest correlation to use in the regression model. This can be visualised through plotting the number of highest correlation explanatory variables used, against the resulting RMSE. As shown in figure 1, by selecting the 50 highest correlated variables with the sale price, a RMSE of just over \$35000 can be reached on the test set.
 
-An alternative would be to use ridge regression, a modified version of the vanilla linear regression. This however, requires a regularisation coefficient $\lambda$ to be chosen. This is done by plotting the RMSE as $\lambda$ varies (see figure 2).
-
-Another viable methodology would be to use ridge regression, though this would require choosing a suitable regularisation parameter $\lambda$. This can chosen visually by plotting the value of $\lambda$ against the resulting RMSE shown in figure 2. This shows that an RMSE of just over \$35000 can be reached when $2^2 \leq \lambda \leq 2^7$.
+An alternative would be to use ridge regression, a modified version of the vanilla linear regression. This however, requires a regularisation coefficient $\lambda$ to be chosen. This can chosen visually by plotting the value of $\lambda$ against the resulting RMSE shown in figure 2. This shows that an RMSE of just over \$35000 can be reached when $2^2 \leq \lambda \leq 2^7$.
 
 \begin{figure}[H]
 \includegraphics[width=12cm]{corr1}
 \centering
-\caption{Root mean squared error against number of explanatory variables}
+\caption{Root mean squared error against number of explanatory variables for linear regression}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=12cm]{ridge}
 \centering
-\caption{Root mean squared error against $\log_2(\lambda)$}
+\caption{Root mean squared error against $\log_2(\lambda)$ for ridge regression}
 \end{figure}
 
 \section{Conclusion}
 
-From this analysis, it can be concluded that house prices can be reasonably accurately gauged, through adapting the regression techniques in lectures. By choosing the explanatory variables intelligently or using advanced regression techniques, a suitable model can be inferred to predict house prices in Ames, Iowa with an RMSE of just over \$30000. The code for this report can be found at \url{https://github.com/HenryJia/MA930/tree/main/Assignment2}.
+From this analysis, it can be concluded that house prices can be reasonably accurately gauged through adapting the regression techniques in lectures. By choosing the explanatory variables intelligently or using advanced regression techniques, a suitable model can be inferred to predict house prices in Ames, Iowa with an RMSE of just over \$35000. The code for this report can be found at \url{https://github.com/HenryJia/MA930/tree/main/Assignment2}.
 
 \appendix
 \section{Appendix}
